@@ -13,6 +13,18 @@ module.exports = function(app, db) {
   );
 
   app.get("/", function(request, response) {
-    response.render(`${__dirname}/src/pages/index.ejs`);
+    response.render(`${__dirname}/views/index.ejs`);
   });
+  
+  
+  
+  /*                                     helper methods depends on app and db added here                                    */
+  const logged_in = function(id) {
+    if (typeof id === "undefined") {
+      return false;
+    }
+
+    return true;
+  };
+  /*                                     helper methods depends on app and db added here                                    */
 };
